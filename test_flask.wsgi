@@ -1,8 +1,5 @@
-import sys 
-import logging 
+from app import app
 
-logging.basicConfig(stream=sys.stderr) 
-sys.path.insert(0,"/var/www/html/test_flask") 
-
-from app import app as application 
-application.secret_key = '7wU5oQhA3cihhYpOtkyvLNb5OzEixfww'
+activate_this = '/var/www/html/test_flask/env/bin/activate_this.py'
+with open(activate_this) as file_:
+	exec(file_.read(), dict(__file__=activate_this))
